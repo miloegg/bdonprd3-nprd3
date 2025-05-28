@@ -57,7 +57,7 @@ custom_replacements = {
     primary_sidecar_virtual_network_name               = "bdo7vnet-sidecar1-$${starter_location_01}"
     primary_firewall_name                              = "bdo7fw-hub1-$${starter_location_01}"
     primary_firewall_policy_name                       = "bdo7fwp-hub1-$${starter_location_01}"
-    primary_virtual_network_gateway_express_route_name = "bdo7vgw-hub1-er-$${starter_location_01}"
+    # primary_virtual_network_gateway_express_route_name = "bdo7vgw-hub1-er-$${starter_location_01}"
     # primary_virtual_network_gateway_vpn_name           = "bdo7vgw-hub1-vpn-$${starter_location_01}"
     # primary_private_dns_resolver_name                  = "bdo7pdr-hub1-dns-$${starter_location_01}"
     # primary_bastion_host_name                          = "bdo7bas-hub-$${starter_location_01}"
@@ -753,14 +753,14 @@ virtual_wan_virtual_hubs = {
     firewall_policy = {
       name = "$${primary_firewall_policy_name}"
     }
-    virtual_network_gateways = {
-      express_route = {
-        name = "$${primary_virtual_network_gateway_express_route_name}"
-      }
+    # virtual_network_gateways = {
+    #   express_route = {
+    #     name = "$${primary_virtual_network_gateway_express_route_name}"
+    #   }
       # vpn = {
       #   name = "$${primary_virtual_network_gateway_vpn_name}"
       # }
-    }
+    # }
     # private_dns_zones = {
     #   resource_group_name            = "$${dns_resource_group_name}"
     #   is_primary                     = true
