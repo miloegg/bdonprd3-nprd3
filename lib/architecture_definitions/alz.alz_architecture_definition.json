@@ -1,0 +1,211 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/Azure-Landing-Zones-Library/main/schemas/architecture_definition.json",
+    "name": "alz",
+    "management_groups": [
+      {
+        "archetypes": [
+          "root_override"
+        ],
+        "display_name": "mg-alz-root-npd",
+        "exists": false,
+        "id": "mg-alz-root-npd",
+        "parent_id": null
+      },
+      {
+        "archetypes": [
+          "platform_override"
+        ],
+        "display_name": "mg-platform-npd",
+        "exists": false,
+        "id": "mg-platform-npd",
+        "parent_id": "mg-alz-root-npd"
+      },
+      {
+        "archetypes": [
+          "management"
+        ],
+        "display_name": "mg-platform-management-npd",
+        "exists": false,
+        "id": "mg-platform-management-npd",
+        "parent_id": "mg-platform-npd"
+      },
+      {
+        "archetypes": [
+          "connectivity"
+        ],
+        "display_name": "mg-platform-connectivity-npd",
+        "exists": false,
+        "id": "mg-platform-connectivity-npd",
+        "parent_id": "mg-platform-npd"
+      },
+      {
+        "archetypes": [
+          "npd_security"
+        ],
+        "display_name": "mg-platform-security-npd",
+        "exists": false,
+        "id": "mg-platform-security-npd",
+        "parent_id": "mg-platform-npd"
+      },
+
+      {
+        "archetypes": [
+          "npd_landing_zones_dev"
+        ],
+        "display_name": "mg-landingzones-dev",
+        "exists": false,
+        "id": "mg-landingzones-dev",
+        "parent_id": "mg-alz-root-npd"
+      },
+      {
+        "archetypes": [
+          "npd_dev_workload"
+        ],
+        "display_name": "mg-lz-workload-dev",
+        "exists": false,
+        "id": "mg-lz-workload-dev",
+        "parent_id": "mg-landingzones-dev"
+      },
+      {
+        "archetypes": [
+          "npd_dev_workload"
+        ],
+        "display_name": "mg-lz-commonplatform-dev",
+        "exists": false,
+        "id": "mg-lz-commonplatform-dev",
+        "parent_id": "mg-landingzones-dev"
+      },
+      {
+        "archetypes": [
+          "npd_dev_workload"
+        ],
+        "display_name": "mg-lz-sharedinfra-dev",
+        "exists": false,
+        "id": "mg-lz-sharedinfra-dev",
+        "parent_id": "mg-landingzones-dev"
+      },
+      {
+        "archetypes": [
+          "npd_dev_workload"
+        ],
+        "display_name": "mg-lz-toolchain-dev",
+        "exists": false,
+        "id": "mg-lz-toolchain-dev",
+        "parent_id": "mg-landingzones-dev"
+      },
+
+      {
+        "archetypes": [
+          "npd_landing_zones_uat"
+        ],
+        "display_name": "mg-landingzones-uat",
+        "exists": false,
+        "id": "mg-landingzones-uat",
+        "parent_id": "mg-alz-root-npd"
+      },
+      {
+        "archetypes": [
+          "npd_uat_workload"
+        ],
+        "display_name": "mg-lz-workload-uat",
+        "exists": false,
+        "id": "mg-lz-workload-uat",
+        "parent_id": "mg-landingzones-uat"
+      },
+      {
+        "archetypes": [
+          "npd_uat_workload"
+        ],
+        "display_name": "mg-lz-commonplatform-uat",
+        "exists": false,
+        "id": "mg-lz-commonplatform-uat",
+        "parent_id": "mg-landingzones-uat"
+      },
+
+      {
+        "archetypes": [
+          "npd_landing_zones_sit"
+        ],
+        "display_name": "mg-landingzones-sit",
+        "exists": false,
+        "id": "mg-landingzones-sit",
+        "parent_id": "mg-alz-root-npd"
+      },
+      {
+        "archetypes": [
+          "npd_sit_workload"
+        ],
+        "display_name": "mg-lz-workload-sit",
+        "exists": false,
+        "id": "mg-lz-workload-sit",
+        "parent_id": "mg-landingzones-sit"
+      },
+      {
+        "archetypes": [
+          "npd_sit_workload"
+        ],
+        "display_name": "mg-lz-commonplatform-sit",
+        "exists": false,
+        "id": "mg-lz-commonplatform-sit",
+        "parent_id": "mg-landingzones-sit"
+      },
+
+      {
+        "archetypes": [
+          "npd_landing_zones_ppd"
+        ],
+        "display_name": "mg-landingzones-ppd",
+        "exists": false,
+        "id": "mg-landingzones-ppd",
+        "parent_id": "mg-alz-root-npd"
+      },
+      {
+        "archetypes": [
+          "npd_ppd_workload"
+        ],
+        "display_name": "mg-lz-workload-ppd",
+        "exists": false,
+        "id": "mg-lz-workload-ppd",
+        "parent_id": "mg-landingzones-ppd"
+      },
+      {
+        "archetypes": [
+          "npd_ppd_workload"
+        ],
+        "display_name": "mg-lz-commonplatform-ppd",
+        "exists": false,
+        "id": "mg-lz-commonplatform-ppd",
+        "parent_id": "mg-landingzones-ppd"
+      },      
+
+
+  
+      {
+        "archetypes": [
+          "sandbox"
+        ],
+        "display_name": "mg-sandbox",
+        "exists": false,
+        "id": "mg-sandbox",
+        "parent_id": "mg-alz-root-npd"
+      },
+      {
+        "archetypes": [
+          "decommissioned"
+        ],
+        "display_name": "mg-decom-npd",
+        "exists": false,
+        "id": "mg-decom-npd",
+        "parent_id": "mg-alz-root-npd"
+      },
+      {
+        "archetypes": [
+          "npd_vendor"
+        ],
+        "display_name": "mg-vendor-npd",
+        "exists": false,
+        "id": "mg-vendor-npd",
+        "parent_id": "mg-alz-root-npd"
+      }      
+    ]
+  }
