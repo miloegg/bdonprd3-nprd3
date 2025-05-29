@@ -732,24 +732,24 @@ virtual_wan_settings = {
   #   location            = "$${starter_location_01}"
   # }
 
-  # routing_intents = {
-  #   intent1 = {
-  #     name            = "routing-intent-nprd"
-  #     virtual_hub_key = "$${primary_hub_name}"
-  #     routing_policies = [
-  #       {
-  #         name                  = "internet"
-  #         destinations          = ["Internet"]
-  #         next_hop_firewall_key = "primary"
-  #       },
-  #       {
-  #         name                  = "private"
-  #         destinations          = ["PrivateTraffic"]
-  #         next_hop_firewall_key = "primary"
-  #       }
-  #     ]
-  #   }
-  # }
+  routing_intents = {
+    intent1 = {
+      name            = "routing-intent-nprd"
+      virtual_hub_key = "primary"
+      routing_policies = [
+        {
+          name                  = "internet"
+          destinations          = ["Internet"]
+          next_hop_firewall_key = "primary"
+        },
+        {
+          name                  = "private"
+          destinations          = ["PrivateTraffic"]
+          next_hop_firewall_key = "primary"
+        }
+      ]
+    }
+  }
 
 
 }
