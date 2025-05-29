@@ -53,10 +53,10 @@ custom_replacements = {
     dcr_vm_insights_name                    = "bdo7dcr-vm-insights"
 
     # Resource names primary connectivity
-    primary_hub_name                                   = "bdo7vwan-hub1-$${starter_location_01}"
-    primary_sidecar_virtual_network_name               = "bdo7vnet-sidecar1-$${starter_location_01}"
-    primary_firewall_name                              = "bdo7fw-hub1-$${starter_location_01}"
-    primary_firewall_policy_name                       = "bdo7fwp-hub1-$${starter_location_01}"
+    primary_hub_name                     = "bdo7vwan-hub1-$${starter_location_01}"
+    primary_sidecar_virtual_network_name = "bdo7vnet-sidecar1-$${starter_location_01}"
+    primary_firewall_name                = "bdo7fw-hub1-$${starter_location_01}"
+    primary_firewall_policy_name         = "bdo7fwp-hub1-$${starter_location_01}"
     # primary_virtual_network_gateway_express_route_name = "bdo7vgw-hub1-er-$${starter_location_01}"
     # primary_virtual_network_gateway_vpn_name           = "bdo7vgw-hub1-vpn-$${starter_location_01}"
     # primary_private_dns_resolver_name                  = "bdo7pdr-hub1-dns-$${starter_location_01}"
@@ -732,6 +732,26 @@ virtual_wan_settings = {
   #   location            = "$${starter_location_01}"
   # }
 
+  routing_intents = {
+    intent1 = {
+      name            = "routing-intent-nprd"
+      virtual_hub_key = virtual_wan_virtual_hubs.primary.hub.name
+      routing_policies = [
+        {
+          name                  = "internet"
+          destinations          = ["Internet"]
+          next_hop_firewall_key = virtual_wan_virtual_hubs.primary.firewall.name
+        },
+        {
+          name                  = "private"
+          destinations          = ["PrivateTraffic"]
+          next_hop_firewall_key = virtual_wan_virtual_hubs.primary.firewall.name
+        }
+      ]
+    }
+  }
+
+
 }
 
 
@@ -757,9 +777,9 @@ virtual_wan_virtual_hubs = {
     #   express_route = {
     #     name = "$${primary_virtual_network_gateway_express_route_name}"
     #   }
-      # vpn = {
-      #   name = "$${primary_virtual_network_gateway_vpn_name}"
-      # }
+    # vpn = {
+    #   name = "$${primary_virtual_network_gateway_vpn_name}"
+    # }
     # }
     # private_dns_zones = {
     #   resource_group_name            = "$${dns_resource_group_name}"
