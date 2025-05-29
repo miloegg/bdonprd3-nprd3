@@ -59,7 +59,7 @@ custom_replacements = {
     primary_firewall_policy_name         = "bdo7fwp-hub1-$${starter_location_01}"
     # primary_virtual_network_gateway_express_route_name = "bdo7vgw-hub1-er-$${starter_location_01}"
     # primary_virtual_network_gateway_vpn_name           = "bdo7vgw-hub1-vpn-$${starter_location_01}"
-    # primary_private_dns_resolver_name                  = "bdo7pdr-hub1-dns-$${starter_location_01}"
+    primary_private_dns_resolver_name                  = "bdo7pdr-hub1-dns-$${starter_location_01}"
     # primary_bastion_host_name                          = "bdo7bas-hub-$${starter_location_01}"
     # primary_bastion_host_public_ip_name                = "bdo7pip-bastion-hub-$${starter_location_01}"
 
@@ -732,24 +732,24 @@ virtual_wan_settings = {
   #   location            = "$${starter_location_01}"
   # }
 
-  routing_intents = {
-    intent1 = {
-      name            = "routing-intent-nprd"
-      virtual_hub_key = "$${primary_hub_name}"
-      routing_policies = [
-        {
-          name                  = "internet"
-          destinations          = ["Internet"]
-          next_hop_firewall_key = "primary"
-        },
-        {
-          name                  = "private"
-          destinations          = ["PrivateTraffic"]
-          next_hop_firewall_key = "primary"
-        }
-      ]
-    }
-  }
+  # routing_intents = {
+  #   intent1 = {
+  #     name            = "routing-intent-nprd"
+  #     virtual_hub_key = "$${primary_hub_name}"
+  #     routing_policies = [
+  #       {
+  #         name                  = "internet"
+  #         destinations          = ["Internet"]
+  #         next_hop_firewall_key = "primary"
+  #       },
+  #       {
+  #         name                  = "private"
+  #         destinations          = ["PrivateTraffic"]
+  #         next_hop_firewall_key = "primary"
+  #       }
+  #     ]
+  #   }
+  # }
 
 
 }
