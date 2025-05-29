@@ -73,7 +73,7 @@ custom_replacements = {
     # secondary_private_dns_resolver_name                  = "bdo7pdr-hub2-dns-$${starter_location_02}"
 
     # Private DNS Zones primary
-    # primary_auto_registration_zone_name = "$${starter_location_01}.azure.local"
+    primary_auto_registration_zone_name = "$${starter_location_01}.azure.local"
 
     # Private DNS Zones secondary
     # secondary_auto_registration_zone_name = "$${starter_location_02}.azure.local"
