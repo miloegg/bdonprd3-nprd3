@@ -735,17 +735,17 @@ virtual_wan_settings = {
   routing_intents = {
     intent1 = {
       name            = "routing-intent-nprd"
-      virtual_hub_key = virtual_wan_virtual_hubs.primary.hub.name
+      virtual_hub_key = "$${primary_hub_name}"
       routing_policies = [
         {
           name                  = "internet"
           destinations          = ["Internet"]
-          next_hop_firewall_key = virtual_wan_virtual_hubs.primary.firewall.name
+          next_hop_firewall_key = "$${primary_firewall_name}"
         },
         {
           name                  = "private"
           destinations          = ["PrivateTraffic"]
-          next_hop_firewall_key = virtual_wan_virtual_hubs.primary.firewall.name
+          next_hop_firewall_key = "$${primary_firewall_name}"
         }
       ]
     }
