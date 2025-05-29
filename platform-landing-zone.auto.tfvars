@@ -781,16 +781,17 @@ virtual_wan_virtual_hubs = {
     #   name = "$${primary_virtual_network_gateway_vpn_name}"
     # }
     # }
-    # private_dns_zones = {
-    #   resource_group_name            = "$${dns_resource_group_name}"
-    #   is_primary                     = true
-    #   auto_registration_zone_enabled = true
-    #   auto_registration_zone_name    = "$${primary_auto_registration_zone_name}"
-    #   subnet_address_prefix          = "$${primary_private_dns_resolver_subnet_address_prefix}"
-    #   private_dns_resolver = {
-    #     name = "$${primary_private_dns_resolver_name}"
-    #   }
-    # }
+    private_dns_zones = {
+      resource_group_name            = "$${dns_resource_group_name}"
+      is_primary                     = true
+      auto_registration_zone_enabled = true
+      auto_registration_zone_name    = "$${primary_auto_registration_zone_name}"
+      subnet_address_prefix          = "$${primary_private_dns_resolver_subnet_address_prefix}"
+      private_link_private_dns_zones = {}
+      private_dns_resolver = {
+        name = "$${primary_private_dns_resolver_name}"
+      }
+    }
 
     # bastion = {
     #   subnet_address_prefix = "$${primary_bastion_subnet_address_prefix}"
