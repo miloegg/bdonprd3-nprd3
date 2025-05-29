@@ -745,7 +745,7 @@ virtual_wan_settings = {
         {
           name                  = "private"
           destinations          = ["PrivateTraffic"]
-          next_hop_firewall_key = "$${primary_firewall_name}"
+          next_hop_firewall_key = "primary"
         }
       ]
     }
