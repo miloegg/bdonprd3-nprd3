@@ -740,7 +740,7 @@ virtual_wan_settings = {
         {
           name                  = "internet"
           destinations          = ["Internet"]
-          next_hop_firewall_key = "$${primary_firewall_name}"
+          next_hop_firewall_key = "primary"
         },
         {
           name                  = "private"
