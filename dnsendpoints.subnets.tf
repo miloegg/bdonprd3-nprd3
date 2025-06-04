@@ -1,6 +1,6 @@
 resource "azurerm_subnet" "nprd_dns_inbound_subnet" {
   name                 = "nprd-dns-inbound-subnet"
-  resource_group_name  = var.custom_replacements.names.connectivity_hub_primary_resource_group_name.value
-  virtual_network_name = var.custom_replacements.names.primary_sidecar_virtual_network_name.value
+  resource_group_name  = "rgbdo7-hub1-southeastasia"
+  virtual_network_name = "bdo7vnet-sidecar1-southeastasia"
   address_prefixes     = ["10.0.4.80/28"]
 }
