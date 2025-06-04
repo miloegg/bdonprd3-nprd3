@@ -39,7 +39,7 @@ custom_replacements = {
     connectivity_hub_vwan_resource_group_name    = "rgbdo7-hub-vwan-$${starter_location_01}"
     connectivity_hub_primary_resource_group_name = "rgbdo7-hub1-$${starter_location_01}"
     # connectivity_hub_secondary_resource_group_name = "rgbdo7-hub2-$${starter_location_02}"    
-    dns_resource_group_name                      = "rgbdo7-hub-dns-$${starter_location_01}"
+    dns_resource_group_name = "rgbdo7-hub-dns-$${starter_location_01}"
     # ddos_resource_group_name                     = "rgbdo7-hub-ddos-$${starter_location_01}"
     asc_export_resource_group_name = "rgbdo7-asc-export-$${starter_location_01}"
 
@@ -73,7 +73,7 @@ custom_replacements = {
     primary_firewall_policy_name         = "bdo7fwp-hub1-$${starter_location_01}"
     # primary_virtual_network_gateway_express_route_name = "bdo7vgw-hub1-er-$${starter_location_01}"
     # primary_virtual_network_gateway_vpn_name           = "bdo7vgw-hub1-vpn-$${starter_location_01}"
-    primary_private_dns_resolver_name                  = "bdo7pdr-hub1-dns-$${starter_location_01}"
+    primary_private_dns_resolver_name = "bdo7pdr-hub1-dns-$${starter_location_01}"
     # primary_bastion_host_name                          = "bdo7bas-hub-$${starter_location_01}"
     # primary_bastion_host_public_ip_name                = "bdo7pip-bastion-hub-$${starter_location_01}"
 
@@ -720,14 +720,14 @@ connectivity_resource_groups = {
     location = "$${starter_location_01}"
     settings = {
       enabled = true
-    }    
+    }
   }
   vwan_hub_primary = {
     name     = "$${connectivity_hub_primary_resource_group_name}"
     location = "$${starter_location_01}"
     settings = {
       enabled = true
-    }    
+    }
   }
   # vwan_hub_secondary = {
   #   name     = "$${connectivity_hub_secondary_resource_group_name}"
@@ -738,7 +738,7 @@ connectivity_resource_groups = {
     location = "$${starter_location_01}"
     settings = {
       enabled = "$${primary_private_dns_zones_enabled}"
-    }    
+    }
   }
 }
 
@@ -788,7 +788,7 @@ virtual_wan_virtual_hubs = {
       address_prefix = "$${primary_hub_address_space}"
     }
     firewall = {
-      enabled  = "$${primary_firewall_enabled}"      
+      enabled  = "$${primary_firewall_enabled}"
       name     = "$${primary_firewall_name}"
       sku_name = "AZFW_Hub"
       sku_tier = "Standard"
@@ -802,8 +802,12 @@ virtual_wan_virtual_hubs = {
       subnet_address_prefix = "$${primary_private_dns_resolver_subnet_address_prefix}"
       dns_resolver = {
         name = "$${primary_private_dns_resolver_name}"
+        inbound_endpoints = {
+          name        = "nrpd-dns-inbound"
+          subnet_name = "nprd-dns-inbound_subnet"
+        }
       }
-    }    
+    }
     # virtual_network_gateways = {
     #   express_route = {
     #     name = "$${primary_virtual_network_gateway_express_route_name}"
