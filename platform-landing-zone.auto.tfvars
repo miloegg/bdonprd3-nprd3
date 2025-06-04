@@ -808,6 +808,52 @@ virtual_wan_virtual_hubs = {
             subnet_name = "nprd-dns-inbound-subnet"
           }
         }
+        outbound_endpoints = {
+          nprd_out_endpoint = {
+            name        = "nrpd-dns-outbound"
+            subnet_name = "nprd-dns-outbound-subnet"
+
+            forwarding_ruleset = {
+              ruleset1 = {
+                name = "forwarding-ruleset-nprd"
+
+                link_with_outbound_endpoint_virtual_network = true
+
+                metadata_for_outbound_endpoint_virtual_network_link = {
+                  environment = "NonProd"
+                  owner       = "BDO team"
+                }
+
+                # additional_virtual_network_links = {
+                #   link1 = {
+                #     name    = "extra-vnet-link-eastus"
+                #     vnet_id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-eastus/providers/Microsoft.Network/virtualNetworks/vnet-eastus"
+                #     metadata = {
+                #       purpose = "failover"
+                #       zone    = "eastus"
+                #     }
+                #   }
+                # }
+
+                rules = {
+                  rule1 = {
+                    name        = "rule-to-google"
+                    domain_name = "google.com"
+                    enabled     = true
+                    destination_ip_addresses = {
+                      "8.8.8.8" = "53"
+                      "8.8.4.4" = "53"
+                    }
+                    metadata = {
+                      note = "Public DNS forwarding"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
       }
     }
     # virtual_network_gateways = {
