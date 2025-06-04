@@ -804,8 +804,8 @@ virtual_wan_virtual_hubs = {
         name = "$${primary_private_dns_resolver_name}"
         inbound_endpoints = {
           nprd_in_endpoint = {
-              name        = "nrpd-dns-inbound"
-              subnet_name = "nprd-dns-inbound-subnet"
+            name        = "nrpd-dns-inbound"
+            subnet_name = "nprd-dns-inbound-subnet"
           }
         }
       }
