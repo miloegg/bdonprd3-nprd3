@@ -848,17 +848,6 @@ virtual_wan_virtual_hubs = {
                       note = "Public DNS forwarding"
                     }
                   }
-                  rule2 = {
-                    name        = "rule-to-cloudflare"
-                    domain_name = "cloudflare.com."
-                    enabled     = true
-                    destination_ip_addresses = {
-                      "1.1.1.1" = "53"
-                    }
-                    metadata = {
-                      note = "Cloudflare DNS forwarding"
-                    }
-                  }
                 }
               }
             }
