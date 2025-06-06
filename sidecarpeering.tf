@@ -10,7 +10,7 @@ locals {
 resource "azurerm_virtual_hub_connection" "primary_sidecar_to_primary_vhub" {
   provider                  = azurerm.connectivity
   name                      = "pri-sidecar-vhub-connection"
-  virtual_hub_id            = virtual_wan_virtual_hub_resource_ids["primary"]
+  virtual_hub_id            = module.virtual_wan[0].virtual_hub_resource_ids["primary"]
   remote_virtual_network_id = "/subscriptions/${local.connectivity_subscription_id}/resourceGroups/${local.pri_hub_resource_group_name}/providers/Microsoft.Network/virtualNetworks/${local.pri_sidecar_vnet_name}"
 }
 
