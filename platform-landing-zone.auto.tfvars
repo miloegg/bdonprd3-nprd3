@@ -796,6 +796,10 @@ virtual_wan_virtual_hubs = {
     }
     firewall_policy = {
       name = "$${primary_firewall_policy_name}"
+      dns = {
+        servers       = ["10.0.4.84"]
+        proxy_enabled = true
+      }
     }
     private_dns_resolver = {
       enabled               = "$${primary_private_dns_resolver_enabled}"
