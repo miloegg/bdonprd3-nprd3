@@ -1,8 +1,8 @@
 # locals to construct the resource ID of side car vnet, not required if side car vnet is exported as output
 locals {
   connectivity_subscription_id = "0fb0d3b2-5b3a-4db0-8e5e-d5459592651d"
-  pri_hub_resource_group_name      = "rgbdo7-hub1-southeastasia"
-  pri_sidecar_vnet_name            = "bdo7vnet-sidecar1-southeastasia"
+  pri_hub_resource_group_name  = "rgbdo7-hub1-southeastasia"
+  pri_sidecar_vnet_name        = "bdo7vnet-sidecar1-southeastasia"
 }
 
 
