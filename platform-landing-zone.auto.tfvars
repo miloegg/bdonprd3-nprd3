@@ -900,7 +900,7 @@ virtual_wan_virtual_hubs = {
       address_space = ["$${primary_side_car_virtual_network_address_space}"]
       subnets = {
         nprd_dns_inbound_subnet = {
-          name           = "nprd_dns_inbound_subnet"
+          name           = "nprd-dns-inbound-subnet"
           address_prefix = "10.0.4.80/28"
           delegation = [
             {
@@ -912,7 +912,7 @@ virtual_wan_virtual_hubs = {
           ]
         }
         nprd_dns_outbound_subnet = {
-          name           = "nprd_dns_outbound_subnet"
+          name           = "nprd-dns-outbound-subnet"
           address_prefix = "10.0.4.96/28"
           delegation = [
             {
