@@ -806,59 +806,59 @@ virtual_wan_virtual_hubs = {
       subnet_address_prefix = "$${primary_private_dns_resolver_subnet_address_prefix}"
       dns_resolver = {
         name = "$${primary_private_dns_resolver_name}"
-        # inbound_endpoints = {
-        #   nprd_in_endpoint = {
-        #     name                         = "nrpd-dns-inbound"
-        #     subnet_name                  = "nprd-dns-inbound-subnet"
-        #     private_ip_allocation_method = "Static"
-        #     private_ip_address           = "10.0.4.84"
-        #   }
-        # }
-        # outbound_endpoints = {
-        #   nprd_out_endpoint = {
-        #     name        = "nrpd-dns-outbound"
-        #     subnet_name = "nprd-dns-outbound-subnet"
+        inbound_endpoints = {
+          nprd_in_endpoint = {
+            name                         = "nrpd-dns-inbound"
+            subnet_name                  = "nprd-dns-inbound-subnet"
+            private_ip_allocation_method = "Static"
+            private_ip_address           = "10.0.4.84"
+          }
+        }
+        outbound_endpoints = {
+          nprd_out_endpoint = {
+            name        = "nrpd-dns-outbound"
+            subnet_name = "nprd-dns-outbound-subnet"
 
-        #     forwarding_ruleset = {
-        #       ruleset1 = {
-        #         name = "forwarding-ruleset-nprd"
+            forwarding_ruleset = {
+              ruleset1 = {
+                name = "forwarding-ruleset-nprd"
 
-        #         link_with_outbound_endpoint_virtual_network = true
+                link_with_outbound_endpoint_virtual_network = true
 
-        #         metadata_for_outbound_endpoint_virtual_network_link = {
-        #           environment = "NonProd"
-        #           owner       = "BDO team"
-        #         }
+                metadata_for_outbound_endpoint_virtual_network_link = {
+                  environment = "NonProd"
+                  owner       = "BDO team"
+                }
 
-        #         # additional_virtual_network_links = {
-        #         #   link1 = {
-        #         #     name    = "extra-vnet-link-eastus"
-        #         #     vnet_id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-eastus/providers/Microsoft.Network/virtualNetworks/vnet-eastus"
-        #         #     metadata = {
-        #         #       purpose = "failover"
-        #         #       zone    = "eastus"
-        #         #     }
-        #         #   }
-        #         # }
+                # additional_virtual_network_links = {
+                #   link1 = {
+                #     name    = "extra-vnet-link-eastus"
+                #     vnet_id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-eastus/providers/Microsoft.Network/virtualNetworks/vnet-eastus"
+                #     metadata = {
+                #       purpose = "failover"
+                #       zone    = "eastus"
+                #     }
+                #   }
+                # }
 
-        #         rules = {
-        #           rule1 = {
-        #             name        = "rule-to-google"
-        #             domain_name = "google.com."
-        #             enabled     = true
-        #             destination_ip_addresses = {
-        #               "8.8.8.8" = "53"
-        #               "8.8.4.4" = "53"
-        #             }
-        #             metadata = {
-        #               note = "Public DNS forwarding"
-        #             }
-        #           }
-        #         }
-        #       }
-        #     }
-        #   }
-        # }
+                rules = {
+                  rule1 = {
+                    name        = "rule-to-google"
+                    domain_name = "google.com."
+                    enabled     = true
+                    destination_ip_addresses = {
+                      "8.8.8.8" = "53"
+                      "8.8.4.4" = "53"
+                    }
+                    metadata = {
+                      note = "Public DNS forwarding"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
 
       }
     }
@@ -898,6 +898,33 @@ virtual_wan_virtual_hubs = {
       enabled       = "$${primary_sidecar_virtual_network_enabled}"
       name          = "$${primary_sidecar_virtual_network_name}"
       address_space = ["$${primary_side_car_virtual_network_address_space}"]
+      subnets = {
+        nprd_dns_inbound_subnet = {
+          name           = "nprd_dns_inbound_subnet"
+          address_prefix = "10.0.4.80/28"
+          delegation = [
+            {
+              name = "dns-inbound-delegation"
+              service_delegation = {
+                name = "Microsoft.Network/dnsResolvers"
+              }
+            }
+          ]
+        }
+        nprd_dns_outbound_subnet = {
+          name           = "nprd_dns_outbound_subnet"
+          address_prefix = "10.0.4.96/28"
+          delegation = [
+            {
+              name = "dns-outbound-delegation"
+              service_delegation = {
+                name = "Microsoft.Network/dnsResolvers"
+              }
+            }
+          ]
+        }
+      }
+
     }
   }
   # secondary = {

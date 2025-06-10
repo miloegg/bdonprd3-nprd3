@@ -1,0 +1,26 @@
+subnets = {
+  nprd_dns_inbound_subnet = {
+    name           = "nprd_dns_inbound_subnet"
+    address_prefix = "10.0.4.80/28"
+    delegation = [
+      {
+        name = "dns-inbound-delegation"
+        service_delegation = {
+          name = "Microsoft.Network/dnsResolvers"
+        }
+      }
+    ]
+  }
+  nprd_dns_outbound_subnet = {
+    name           = "nprd_dns_outbound_subnet"
+    address_prefix = "10.0.4.96/28"
+    delegation = [
+      {
+        name = "dns-outbound-delegation"
+        service_delegation = {
+          name = "Microsoft.Network/dnsResolvers"
+        }
+      }
+    ]
+  }
+}
