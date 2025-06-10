@@ -17,7 +17,7 @@ locals {
       log_groups                     = ["allLogs"]
       metric_categories              = ["AllMetrics"]
       log_analytics_destination_type = "Dedicated"
-      workspace_resource_id          = "/subscriptions/1543411c-a55d-46d6-93bf-2e585fd51376/resourcegroups/rgbdo7-management-southeastasia/providers/microsoft.operationalinsights/workspaces/bdo7law-management-southeastasia"
+      workspace_resource_id          = "/subscriptions/1543411c-a55d-46d6-93bf-2e585fd51376/resourceGroups/rgbdo7-management-southeastasia/providers/Microsoft.Operationalinsights/workspaces/bdo7law-management-southeastasia"
     }
   }
 }  
