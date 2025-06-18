@@ -978,7 +978,9 @@ virtual_wan_virtual_hubs = {
         proxy_enabled = true
       }
     }
-
+    private_dns_resolver = {
+      enabled = "$${secondary_private_dns_resolver_enabled}"
+    }
     # virtual_network_gateways = {
     #   express_route = {
     #     name = "$${secondary_virtual_network_gateway_express_route_name}"
