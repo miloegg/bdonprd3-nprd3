@@ -105,16 +105,16 @@ custom_replacements = {
 
     # IP Ranges Primary
     # Regional Address Space: 10.0.0.0/16
-    primary_hub_address_space                      = "10.0.0.0/22"
-    primary_side_car_virtual_network_address_space = "10.0.4.0/22"
-    # primary_bastion_subnet_address_prefix              = "10.0.4.0/26"
+    primary_hub_address_space                          = "10.0.0.0/22"
+    primary_side_car_virtual_network_address_space     = "10.0.4.0/22"
+    primary_bastion_subnet_address_prefix              = "10.0.4.0/26"
     primary_private_dns_resolver_subnet_address_prefix = "10.0.4.64/28"
 
     # IP Ranges Secondary
     # Regional Address Space: 10.1.0.0/16
-    secondary_hub_address_space                      = "10.1.0.0/22"
-    secondary_side_car_virtual_network_address_space = "10.1.4.0/22"
-    # primary_bastion_subnet_address_prefix              = "10.0.4.0/26"
+    secondary_hub_address_space                          = "10.1.0.0/22"
+    secondary_side_car_virtual_network_address_space     = "10.1.4.0/22"
+    secondary_bastion_subnet_address_prefix              = "10.1.4.0/26"
     secondary_private_dns_resolver_subnet_address_prefix = "10.1.4.64/28"
 
   }
