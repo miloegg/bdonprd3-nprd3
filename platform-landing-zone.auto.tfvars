@@ -1030,6 +1030,7 @@ virtual_wan_virtual_hubs = {
       enabled       = "$${secondary_sidecar_virtual_network_enabled}"
       name          = "$${secondary_sidecar_virtual_network_name}"
       address_space = ["$${secondary_side_car_virtual_network_address_space}"]
+      subnets       = {}
     }
   }
 }
