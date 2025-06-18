@@ -38,7 +38,7 @@ custom_replacements = {
     management_resource_group_name               = "rgbdo7-management-$${starter_location_01}"
     connectivity_hub_vwan_resource_group_name    = "rgbdo7-hub-vwan-$${starter_location_01}"
     connectivity_hub_primary_resource_group_name = "rgbdo7-hub1-$${starter_location_01}"
-    # connectivity_hub_secondary_resource_group_name = "rgbdo7-hub2-$${starter_location_02}"    
+    connectivity_hub_secondary_resource_group_name = "rgbdo7-hub2-$${starter_location_02}"    
     dns_resource_group_name = "rgbdo7-hub-dns-$${starter_location_01}"
     # ddos_resource_group_name                     = "rgbdo7-hub-ddos-$${starter_location_01}"
     asc_export_resource_group_name = "rgbdo7-asc-export-$${starter_location_01}"
@@ -961,7 +961,7 @@ virtual_wan_virtual_hubs = {
 
     }
   }
-  /*
+
   secondary = {
     hub = {
       name           = "$${secondary_hub_name}"
@@ -1034,5 +1034,5 @@ virtual_wan_virtual_hubs = {
       subnets       = {}
     }
   }
-  */
+
 }
