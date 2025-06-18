@@ -892,37 +892,41 @@ virtual_wan_virtual_hubs = {
 
       }
     }
-    # virtual_network_gateways = {
-    #   express_route = {
-    #     name = "$${primary_virtual_network_gateway_express_route_name}"
-    #   }
-    # vpn = {
-    #   name = "$${primary_virtual_network_gateway_vpn_name}"
-    # }
-    # }
+    virtual_network_gateways = {
+      express_route = {
+        enabled = "$${primary_virtual_network_gateway_express_route_enabled}"
+        # name = "$${primary_virtual_network_gateway_express_route_name}"
+      }
+      vpn = {
+        enabled = "$${primary_virtual_network_gateway_vpn_enabled}"
+        # name = "$${primary_virtual_network_gateway_vpn_name}"
+      }
+    }
 
-    # private_dns_zones = {
-    #   resource_group_name            = "$${dns_resource_group_name}"
-    #   is_primary                     = true
-    #   auto_registration_zone_enabled = false
-    #   auto_registration_zone_name    = "$${primary_auto_registration_zone_name}"
-    #   subnet_address_prefix          = "$${primary_private_dns_resolver_subnet_address_prefix}"
-    #   private_link_private_dns_zones = {}
-    #   private_dns_resolver = {
-    #     name = "$${primary_private_dns_resolver_name}"
-    #   }
-    # }
+    private_dns_zones = {
+      enabled = "$${primary_private_dns_zones_enabled}"
+      # resource_group_name            = "$${dns_resource_group_name}"
+      # is_primary                     = true
+      # auto_registration_zone_enabled = false
+      # auto_registration_zone_name    = "$${primary_auto_registration_zone_name}"
+      # subnet_address_prefix          = "$${primary_private_dns_resolver_subnet_address_prefix}"
+      # private_link_private_dns_zones = {}
+      # private_dns_resolver = {
+      #   name = "$${primary_private_dns_resolver_name}"
+      # }
+    }
 
-    # bastion = {
-    #   subnet_address_prefix = "$${primary_bastion_subnet_address_prefix}"
-    #   bastion_host = {
-    #     name = "$${primary_bastion_host_name}"
-    #   }
-    #   bastion_public_ip = {
-    #     name  = "$${primary_bastion_host_public_ip_name}"
-    #     zones = "$${starter_location_01_availability_zones}"
-    #   }
-    # }
+    bastion = {
+      enabled = "$${primary_bastion_enabled}"
+      # subnet_address_prefix = "$${primary_bastion_subnet_address_prefix}"
+      # bastion_host = {
+      #   name = "$${primary_bastion_host_name}"
+      # }
+      # bastion_public_ip = {
+      #   name  = "$${primary_bastion_host_public_ip_name}"
+      #   zones = "$${starter_location_01_availability_zones}"
+      # }
+    }
 
     side_car_virtual_network = {
       enabled       = "$${primary_sidecar_virtual_network_enabled}"
@@ -981,36 +985,41 @@ virtual_wan_virtual_hubs = {
     private_dns_resolver = {
       enabled = "$${secondary_private_dns_resolver_enabled}"
     }
-    # virtual_network_gateways = {
-    #   express_route = {
-    #     name = "$${secondary_virtual_network_gateway_express_route_name}"
-    #   }
-    #   vpn = {
-    #     name = "$${secondary_virtual_network_gateway_vpn_name}"
-    #   }
-    # }
 
-    # private_dns_zones = {
-    #   resource_group_name            = "$${dns_resource_group_name}"
-    #   is_primary                     = false
-    #   auto_registration_zone_enabled = true
-    #   auto_registration_zone_name    = "$${secondary_auto_registration_zone_name}"
-    #   subnet_address_prefix          = "$${secondary_private_dns_resolver_subnet_address_prefix}"
-    #   private_dns_resolver = {
-    #     name = "$${secondary_private_dns_resolver_name}"
-    #   }
-    # }
+    virtual_network_gateways = {
+      express_route = {
+        enabled = "$${secondary_virtual_network_gateway_express_route_enabled}"
+        # name = "$${secondary_virtual_network_gateway_express_route_name}"
+      }
+      vpn = {
+        enabled = "$${secondary_virtual_network_gateway_vpn_enabled}"
+        # name = "$${secondary_virtual_network_gateway_vpn_name}"
+      }
+    }
 
-    # bastion = {
-    #   subnet_address_prefix = "$${secondary_bastion_subnet_address_prefix}"
-    #   bastion_host = {
-    #     name = "$${secondary_bastion_host_name}"
-    #   }
-    #   bastion_public_ip = {
-    #     name  = "$${secondary_bastion_host_public_ip_name}"
-    #     zones = "$${starter_location_02_availability_zones}"
-    #   }
-    # }
+    private_dns_zones = {
+      enabled = "$${secondary_private_dns_zones_enabled}"
+      # resource_group_name            = "$${dns_resource_group_name}"
+      # is_primary                     = false
+      # auto_registration_zone_enabled = true
+      # auto_registration_zone_name    = "$${secondary_auto_registration_zone_name}"
+      # subnet_address_prefix          = "$${secondary_private_dns_resolver_subnet_address_prefix}"
+      # private_dns_resolver = {
+      #   name = "$${secondary_private_dns_resolver_name}"
+      # }
+    }
+
+    bastion = {
+      enabled = "$${secondary_bastion_enabled}"
+      # subnet_address_prefix = "$${secondary_bastion_subnet_address_prefix}"
+      # bastion_host = {
+      #   name = "$${secondary_bastion_host_name}"
+      # }
+      # bastion_public_ip = {
+      #   name  = "$${secondary_bastion_host_public_ip_name}"
+      #   zones = "$${starter_location_02_availability_zones}"
+      # }
+    }
 
     side_car_virtual_network = {
       enabled       = "$${secondary_sidecar_virtual_network_enabled}"
