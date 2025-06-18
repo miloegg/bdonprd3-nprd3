@@ -961,6 +961,7 @@ virtual_wan_virtual_hubs = {
 
     }
   }
+  /*
   secondary = {
     hub = {
       name           = "$${secondary_hub_name}"
@@ -1033,4 +1034,5 @@ virtual_wan_virtual_hubs = {
       subnets       = {}
     }
   }
+  */
 }
