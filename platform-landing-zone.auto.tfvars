@@ -742,7 +742,7 @@ connectivity_resource_groups = {
       enabled = true
     }
   }
-
+  /*
   vwan_hub_secondary = {
     name     = "$${connectivity_hub_secondary_resource_group_name}"
     location = "$${starter_location_02}"
@@ -750,7 +750,7 @@ connectivity_resource_groups = {
       enabled = true
     }
   }
-
+*/
   dns = {
     name     = "$${dns_resource_group_name}"
     location = "$${starter_location_01}"
@@ -790,7 +790,7 @@ virtual_wan_settings = {
         }
       ]
     }
-
+    /*
     intent2 = {
       name            = "routing-intent-uat"
       virtual_hub_key = "secondary"
@@ -807,7 +807,7 @@ virtual_wan_settings = {
         }
       ]
     }
-
+*/
   }
 
 
@@ -967,7 +967,7 @@ virtual_wan_virtual_hubs = {
 
     }
   }
-
+  /*
   secondary = {
     hub = {
       name           = "$${secondary_hub_name}"
@@ -1118,5 +1118,5 @@ virtual_wan_virtual_hubs = {
       }
     }
   }
-
+*/
 }
