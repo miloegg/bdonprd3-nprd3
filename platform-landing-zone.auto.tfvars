@@ -74,8 +74,8 @@ custom_replacements = {
     primary_virtual_network_gateway_express_route_name = "bdo7vgw-hub1-er-$${starter_location_01}"
     primary_virtual_network_gateway_vpn_name           = "bdo7vgw-hub1-vpn-$${starter_location_01}"
     primary_private_dns_resolver_name                  = "bdo7pdr-hub1-dns-$${starter_location_01}"
-    primary_bastion_host_name                          = "bdo7bas-hub-$${starter_location_01}"
-    primary_bastion_host_public_ip_name                = "bdo7pip-bastion-hub-$${starter_location_01}"
+    primary_bastion_host_name                          = "bdo7bas-hub1-$${starter_location_01}"
+    primary_bastion_host_public_ip_name                = "bdo7pip-bastion-hub1-$${starter_location_01}"
 
     # Resource provisioning secondary connectivity
     secondary_firewall_enabled                              = true
@@ -96,6 +96,8 @@ custom_replacements = {
     secondary_virtual_network_gateway_express_route_name = "bdo7vgw-hub2-er-$${starter_location_02}"
     secondary_virtual_network_gateway_vpn_name           = "bdo7vgw-hub2-vpn-$${starter_location_02}"
     secondary_private_dns_resolver_name                  = "bdo7pdr-hub2-dns-$${starter_location_02}"
+    secondary_bastion_host_name                          = "bdo7bas-hub2-$${starter_location_01}"
+    secondary_bastion_host_public_ip_name                = "bdo7pip-bastion-hub2-$${starter_location_01}"
 
     # Private DNS Zones primary
     primary_auto_registration_zone_name = "$${starter_location_01}.azure.local"
