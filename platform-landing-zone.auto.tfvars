@@ -992,6 +992,59 @@ virtual_wan_virtual_hubs = {
       subnet_address_prefix = "$${secondary_private_dns_resolver_subnet_address_prefix}"
       dns_resolver = {
         name = "$${secondary_private_dns_resolver_name}"
+        inbound_endpoints = {
+          sec_in_endpoint = {
+            name                         = "sec-dns-inbound"
+            subnet_name                  = "sec-dns-inbound-subnet"
+            private_ip_allocation_method = "Static"
+            private_ip_address           = "10.1.4.84"
+          }
+        }
+        outbound_endpoints = {
+          sec_out_endpoint = {
+            name        = "sec-dns-outbound"
+            subnet_name = "sec-dns-outbound-subnet"
+
+            forwarding_ruleset = {
+              ruleset1 = {
+                name = "forwarding-ruleset-sec"
+
+                link_with_outbound_endpoint_virtual_network = true
+
+                metadata_for_outbound_endpoint_virtual_network_link = {
+                  environment = "NonProd"
+                  owner       = "BDO team"
+                }
+
+                # additional_virtual_network_links = {
+                #   link1 = {
+                #     name    = "extra-vnet-link-eastus"
+                #     vnet_id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-eastus/providers/Microsoft.Network/virtualNetworks/vnet-eastus"
+                #     metadata = {
+                #       purpose = "failover"
+                #       zone    = "eastus"
+                #     }
+                #   }
+                # }
+
+                rules = {
+                  rule1 = {
+                    name        = "rule-to-google"
+                    domain_name = "google.com."
+                    enabled     = true
+                    destination_ip_addresses = {
+                      "8.8.8.8" = "53"
+                      "8.8.4.4" = "53"
+                    }
+                    metadata = {
+                      note = "Public DNS forwarding"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
 
@@ -1035,7 +1088,32 @@ virtual_wan_virtual_hubs = {
       enabled       = "$${secondary_sidecar_virtual_network_enabled}"
       name          = "$${secondary_sidecar_virtual_network_name}"
       address_space = ["$${secondary_side_car_virtual_network_address_space}"]
-      subnets       = {}
+      subnets = {
+        sec_dns_inbound_subnet = {
+          name           = "sec-dns-inbound-subnet"
+          address_prefix = "10.1.4.80/28"
+          delegation = [
+            {
+              name = "dns-inbound-delegation"
+              service_delegation = {
+                name = "Microsoft.Network/dnsResolvers"
+              }
+            }
+          ]
+        }
+        sec_dns_outbound_subnet = {
+          name           = "sec-dns-outbound-subnet"
+          address_prefix = "10.1.4.96/28"
+          delegation = [
+            {
+              name = "dns-outbound-delegation"
+              service_delegation = {
+                name = "Microsoft.Network/dnsResolvers"
+              }
+            }
+          ]
+        }
+      }
     }
   }
 
