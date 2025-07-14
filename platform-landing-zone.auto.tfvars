@@ -938,6 +938,9 @@ virtual_wan_virtual_hubs = {
       enabled       = "$${primary_sidecar_virtual_network_enabled}"
       name          = "$${primary_sidecar_virtual_network_name}"
       address_space = ["$${primary_side_car_virtual_network_address_space}"]
+      virtual_network_connection_settings = {
+        internet_security_enabled = true
+      }
       subnets = {
         nprd_dns_inbound_subnet = {
           name           = "nprd-dns-inbound-subnet"
