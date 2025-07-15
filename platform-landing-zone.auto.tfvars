@@ -822,6 +822,7 @@ virtual_wan_virtual_hubs = {
       resource_group = "$${connectivity_hub_primary_resource_group_name}"
       location       = "$${starter_location_01}"
       address_prefix = "$${primary_hub_address_space}"
+      sku            = "Standard"
     }
     firewall = {
       enabled  = "$${primary_firewall_enabled}"
