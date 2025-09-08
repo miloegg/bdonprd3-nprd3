@@ -838,6 +838,7 @@ virtual_wan_virtual_hubs = {
         servers       = ["10.0.4.84"]
         proxy_enabled = true
       }
+      threat_intelligence_mode = "Alert"
     }
     private_dns_resolver = {
       enabled               = "$${primary_private_dns_resolver_enabled}"
