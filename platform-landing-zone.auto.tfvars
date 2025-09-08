@@ -832,7 +832,8 @@ virtual_wan_virtual_hubs = {
       zones    = "$${starter_location_01_availability_zones}"
     }
     firewall_policy = {
-      name = "$${primary_firewall_policy_name}"
+      name           = "$${primary_firewall_policy_name}"
+      base_policy_id = "/subscriptions/0fb0d3b2-5b3a-4db0-8e5e-d5459592651d/resourceGroups/rgbdo7-hub1-southeastasia/providers/Microsoft.Network/firewallPolicies/bdo7fwparent-southeastasia"
       dns = {
         servers       = ["10.0.4.84"]
         proxy_enabled = true
