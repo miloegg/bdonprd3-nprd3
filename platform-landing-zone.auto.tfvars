@@ -683,7 +683,10 @@ management_group_settings = {
     mg-sandbox = {
       policy_assignments = {
         Enforce-ALZ-Sandbox = {
-          enforcement_mode = "DoNotEnforce"
+          enforcement_mode = "DoNotEnforce",
+          parameters = {
+            effectDenyVnetPeering = "Audit"
+          }
         }
       }
     }
