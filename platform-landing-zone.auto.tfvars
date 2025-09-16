@@ -321,6 +321,11 @@ management_group_settings = {
 
     mg-landingzones-dev = {
       policy_assignments = {
+        Audit-AppGW-WAF = {
+          parameters = {
+            effect = "Deny"
+          }
+        },
         Deny-IP-forwarding = {
           enforcement_mode = "DoNotEnforce"
         },
