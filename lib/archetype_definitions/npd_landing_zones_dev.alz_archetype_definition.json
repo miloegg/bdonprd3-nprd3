@@ -30,8 +30,7 @@
       "Deny-Public-Endpoints",
       "Deny-Public-IP-On-NIC",
       "Deploy-Private-DNS-Zones",
-      "Enforce-Fsi-Conf",
-      "CIS-Benchmark-v2"
+      "Enforce-Fsi-Conf"
     ],
     "policy_definitions": [],
     "policy_set_definitions": [],
