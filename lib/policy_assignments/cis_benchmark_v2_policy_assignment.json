@@ -20,7 +20,7 @@
             "value": "AuditIfNotExists"
           }
         },        
-        "scope": "${current_scope_resource_id}",
+        "scope": "/providers/Microsoft.Management/managementGroups/placeholder",
         "enforcementMode": "Default"
     },
     "location": "${default_location}",
