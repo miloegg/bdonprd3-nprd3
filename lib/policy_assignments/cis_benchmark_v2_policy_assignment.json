@@ -1,7 +1,7 @@
 {
     "name": "CIS-Benchmark-v2",
     "type": "Microsoft.Authorization/policyAssignments",
-    "apiVersion": "2019-09-01",
+    "apiVersion": "2022-06-01",
     "properties": {
         "description": "These policies address a subset of CIS Microsoft Azure Foundations Benchmark v2.0.0 controls. For more information, visit https://aka.ms/cisazure200-initiative",
         "displayName": "CIS Microsoft Azure Foundations Benchmark v2.0.0",
