@@ -1,0 +1,30 @@
+{
+    "name": "CIS-Benchmark-v2",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2022-06-01",
+    "properties": {
+        "description": "These policies address a subset of CIS Microsoft Azure Foundations Benchmark v2.0.0 controls. For more information, visit https://aka.ms/cisazure200-initiative",
+        "displayName": "CIS Microsoft Azure Foundations Benchmark v2.0.0",
+        "notScopes": [],
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/06f19060-9e68-4070-92ca-f15cc126059e",
+        "nonComplianceMessages": [
+          {
+            "message": "CIS Benchmarks v2.0.0 {enforcementMode} be enforced"
+          }
+        ],
+        "parameters": {
+          "maximumDaysToRotate-d8cf8476-a2ec-4916-896e-992351803c44": {
+            "value": "30"
+          },
+          "effect-5e1de0e3-42cb-4ebc-a86d-61d0c619ca48": {
+            "value": "AuditIfNotExists"
+          }
+        },        
+        "scope": "/providers/Microsoft.Management/managementGroups/placeholder",
+        "enforcementMode": "Default"
+    },
+    "location": "${default_location}",
+    "identity": {
+        "type": "SystemAssigned"
+    }
+}
