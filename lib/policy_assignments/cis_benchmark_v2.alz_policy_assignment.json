@@ -17,7 +17,7 @@
             "value": "30"
           },
           "effect-5e1de0e3-42cb-4ebc-a86d-61d0c619ca48": {
-            "value": "AuditIfNotExists"
+            "value": "Deny"
           }
         },        
         "scope": "/providers/Microsoft.Management/managementGroups/placeholder",
