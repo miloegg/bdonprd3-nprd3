@@ -271,6 +271,11 @@ management_group_settings = {
         },
         TR-01-Logging = {
           enforcement_mode = "DoNotEnforce"
+        },
+        CIS-Benchmark-v2 = {
+          parameters = {
+            effect-1b8ca024-1d5c-4dec-8995-b1a932b41780 = "Deny"
+          }
         }
       }
     }
