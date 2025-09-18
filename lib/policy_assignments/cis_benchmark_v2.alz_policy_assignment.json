@@ -14,7 +14,7 @@
         ],
         "parameters": {
           "maximumDaysToRotate-d8cf8476-a2ec-4916-896e-992351803c44": {
-            "value": "30"
+            "value": 30
           },
           "effect-5e1de0e3-42cb-4ebc-a86d-61d0c619ca48": {
             "value": "Deny"
