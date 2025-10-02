@@ -14,7 +14,7 @@
     "enforcementMode": "Default",
     "parameters": {
       "listOfAllowedLocations-1": {
-        "value": []
+        "value": ["southeastasia", "eastasia", "eastus", "australiaeast", "swedencentral"]
       },
       "policyEffect-1": {
         "value": "Deny"
