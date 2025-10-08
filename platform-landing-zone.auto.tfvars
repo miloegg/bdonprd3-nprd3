@@ -959,8 +959,9 @@ virtual_wan_virtual_hubs = {
       }
       subnets = {
         nprd_dns_inbound_subnet = {
-          name           = "nprd-dns-inbound-subnet"
-          address_prefix = "10.0.4.80/28"
+          name                   = "nprd-dns-inbound-subnet"
+          address_prefix         = "10.0.4.80/28"
+          network_security_group = "/subscriptions/0fb0d3b2-5b3a-4db0-8e5e-d5459592651d/resourceGroups/rg-bdonsg/providers/Microsoft.Network/networkSecurityGroups/bdotestnsg1"
           delegation = [
             {
               name = "dns-inbound-delegation"
@@ -971,8 +972,9 @@ virtual_wan_virtual_hubs = {
           ]
         }
         nprd_dns_outbound_subnet = {
-          name           = "nprd-dns-outbound-subnet"
-          address_prefix = "10.0.4.96/28"
+          name                   = "nprd-dns-outbound-subnet"
+          address_prefix         = "10.0.4.96/28"
+          network_security_group = "/subscriptions/0fb0d3b2-5b3a-4db0-8e5e-d5459592651d/resourceGroups/rg-bdonsg/providers/Microsoft.Network/networkSecurityGroups/bdotestnsg1"
           delegation = [
             {
               name = "dns-outbound-delegation"
