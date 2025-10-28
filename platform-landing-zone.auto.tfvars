@@ -225,6 +225,7 @@ management_group_settings = {
   policy_assignments_to_modify = {
     mg-alz-root-npd = {
       policy_assignments = {
+        /*
         Deploy-MDFC-Config-H224 = {
           parameters = {
             ascExportResourceGroupName                  = "$${asc_export_resource_group_name}"
@@ -245,6 +246,7 @@ management_group_settings = {
           },
           enforcement_mode = "DoNotEnforce"
         },
+        */
         Deploy-AzActivity-Log = {
           enforcement_mode = "DoNotEnforce"
         },
