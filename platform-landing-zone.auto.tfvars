@@ -337,9 +337,11 @@ management_group_settings = {
         Deny-MgmtPorts-Internet = {
           enforcement_mode = "DoNotEnforce"
         },
+        /*
         Deny-Priv-Esc-AKS = {
           enforcement_mode = "DoNotEnforce"
         },
+        */
         Deny-Privileged-AKS = {
           enforcement_mode = "DoNotEnforce"
         },
@@ -426,9 +428,11 @@ management_group_settings = {
         Deny-MgmtPorts-Internet = {
           enforcement_mode = "DoNotEnforce"
         },
+        /*
         Deny-Priv-Esc-AKS = {
           enforcement_mode = "DoNotEnforce"
         },
+        */
         Deny-Privileged-AKS = {
           enforcement_mode = "DoNotEnforce"
         },
@@ -515,9 +519,11 @@ management_group_settings = {
         Deny-MgmtPorts-Internet = {
           enforcement_mode = "DoNotEnforce"
         },
+        /*
         Deny-Priv-Esc-AKS = {
           enforcement_mode = "DoNotEnforce"
         },
+        */
         Deny-Privileged-AKS = {
           enforcement_mode = "DoNotEnforce"
         },
@@ -604,9 +610,11 @@ management_group_settings = {
         Deny-MgmtPorts-Internet = {
           enforcement_mode = "DoNotEnforce"
         },
+        /*
         Deny-Priv-Esc-AKS = {
           enforcement_mode = "DoNotEnforce"
         },
+        */
         Deny-Privileged-AKS = {
           enforcement_mode = "DoNotEnforce"
         },
