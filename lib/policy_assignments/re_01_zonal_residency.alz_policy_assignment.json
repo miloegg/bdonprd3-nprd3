@@ -12,6 +12,7 @@
     "displayName": "RE-01-Zonal-Residency",
     "policyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/130fb88f-0fc9-4678-bfe1-31022d71c7d5",
     "enforcementMode": "Default",
+    "definitionVersion": "1.*.*-PREVIEW",
     "parameters": {
       "allow": {
         "value": "Both"
