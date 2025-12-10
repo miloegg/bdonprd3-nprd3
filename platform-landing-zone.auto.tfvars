@@ -835,7 +835,7 @@ virtual_wan_settings = {
 }
 
 
-
+# supported inputs for firewall_policy are https://github.com/Azure/terraform-azurerm-avm-ptn-alz-connectivity-virtual-wan/blob/main/variables.tf#L339
 virtual_wan_virtual_hubs = {
   primary = {
     hub = {
@@ -860,6 +860,19 @@ virtual_wan_virtual_hubs = {
         proxy_enabled = true
       }
       threat_intelligence_mode = "Alert"
+      intrusion_detection = {
+        mode = Alert
+      }
+      sku = "Premium"
+      identity = {
+        type = "UserAssigned"
+        identity_ids = [] #list of user assigned managed identity ids with RBAC access to key vault
+      }
+      tls_certificate = {
+        key_vault_secret_id = "" #(Required) The ID of the Key Vault, where the secret or certificate is stored.
+        name               = "" #(Required) The name of the certificate
+      }
+
     }
     private_dns_resolver = {
       enabled               = "$${primary_private_dns_resolver_enabled}"
